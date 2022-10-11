@@ -5,8 +5,8 @@ import Mainpage from './Layout/Mainpage';
 function App() {
   return (
     <div className="App">
-      {/* <Login /> */}
-      <Mainpage />
+      <Login />
+      {/* <Mainpage /> */}
       {/* <Politicianlistformain /> */}
     </div>
   );
