@@ -1,21 +1,15 @@
 import React from 'react'
+import Politicianlistformain from '../Components/MainpageComp/Politicianlistformain'
+import Trends from '../Components/MainpageComp/Trends'
+import Sidebar from '../Components/Sidebar'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Logo from '../Assets/logo.png'
-
-
-
-import {
-    PlusIcon,
-    Bars3Icon,
-    BookmarkSquareIcon,
-    FireIcon,
-    HomeIcon,
-    XMarkIcon,
-    CogIcon
-} from '@heroicons/react/24/outline'
-import Politicianlistformain from '../Components/Politicianlistformain'
-import Trends from '../Components/Trends'
+import { XMarkIcon , Bars3Icon } from '@heroicons/react/24/outline'
+import {FaSearch,FaHome,FaPlus,FaPoll} from 'react-icons/fa'
+import {MdNotificationsNone} from 'react-icons/md'
+import {FiSettings} from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 const user = {
     name: 'Emily Selman',
@@ -26,21 +20,22 @@ const user = {
 const setting = {
     name: 'Setting',
     href: '#',
-    icon: CogIcon
+    icon: FiSettings
 }
 
 
 const navigation = [
-    { name: 'Upload', href: '#', icon: PlusIcon },
-    { name: 'Home', href: '#', icon: HomeIcon },
-    { name: 'Trending', href: '#', icon: FireIcon },
-    { name: 'Bookmarks', href: '#', icon: BookmarkSquareIcon },
-    { name: 'Setting', href: '#', icon: CogIcon },
+    { name: 'Search', href: '#', icon: FaSearch  },
+    { name: 'Home', href: '#', icon: FaHome },
+    { name: 'Post', href: '#', icon: FaPlus },
+    { name: 'Surveys', href: '#', icon: FaPoll },
+    { name: 'Notification', href: '#', icon: MdNotificationsNone },
+
 ]
 
-const Mainpage = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+const Mainpage = ({ children }) => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         <>
             <div className="flex h-screen">
@@ -93,28 +88,28 @@ const Mainpage = () => {
                                         <div className="flex flex-shrink-0 items-center px-4">
                                             <img
                                                 className="h-8 w-auto"
-                                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                                alt="Your Company"
+                                                src="../Assets/logo.png"
+                                                alt="Yopali"
                                             />
                                         </div>
                                         <nav aria-label="Sidebar" className="mt-5">
                                             <div className="space-y-1 px-2">
                                                 {navigation.map((item) => (
-                                                    <a
+                                                    <Link
                                                         key={item.name}
-                                                        href={item.href}
+                                                        to={item.href}
                                                         className="group flex items-center rounded-md p-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                                                     >
                                                         <item.icon
-                                                            className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                                                            className="flex flex-col mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                                                             aria-hidden="true"
                                                         />
                                                         {item.name}
-                                                    </a>
+                                                    </Link>
                                                 ))}
-                                                <a
+                                                <Link
                                                     key={setting.name}
-                                                    href={setting.href}
+                                                    to={setting.href}
                                                     className="group flex items-center rounded-md p-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                                                 >
                                                     <setting.icon
@@ -122,12 +117,12 @@ const Mainpage = () => {
                                                         aria-hidden="true"
                                                     />
                                                     {setting.name}
-                                                </a>
+                                                </Link>
                                             </div>
                                         </nav>
                                     </div>
                                     <div className="flex flex-shrink-0 border-t border-gray-200 p-4 hover:bg-blue-300">
-                                        <a href="#" className="group block flex-shrink-0">
+                                        <Link to="\mainpage" className="group block flex-shrink-0">
                                             <div className="flex items-center">
                                                 <div>
                                                     <img className="inline-block h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
@@ -139,7 +134,7 @@ const Mainpage = () => {
                                                     </p>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>
@@ -152,37 +147,40 @@ const Mainpage = () => {
 
                 {/* Static sidebar for desktop */}
                 <div className="hidden lg:flex lg:flex-shrink-0">
-                    <div className="flex w-24 flex-col">
+                    <div className="flex w-28 flex-col">
                         <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-[#408BB6]">
                             <div className="flex-1">
                                 <div className="flex items-center justify-center bg-[#408BB6] py-4">
                                     <img
                                         className="h-8 w-auto"
                                         src={Logo}
-                                        alt="Your Company"
+                                        alt="Yopali"
                                     />
                                 </div>
-                                <nav aria-label="Sidebar" className="flex flex-col items-center space-y-3 py-6">
+                                <nav aria-label="Sidebar" className="flex flex-col items-center space-y-2 py-2">
                                     {navigation.map((item) => (
-                                        <a
+                                        
+                                        <Link
                                             key={item.name}
-                                            href={item.href}
-                                            className="flex items-center rounded-lg p-4 text-indigo-200 hover:bg-indigo-700"
+                                            to={item.href}
+                                            className="flex items-center rounded-lg p-2 text-indigo-200 hover:bg-indigo-700"
                                         >
-                                            <item.icon className="h-6 w-6" aria-hidden="true" />
-                                            <span className="sr-only">{item.name}</span>
-                                        </a>
+                                        <div className='flex flex-col items-center'>
+                                            <item.icon className="h-6 w-6 -mb-5" aria-hidden="true" /><br/>
+                                            <h1 className="text-md font-semibold">{item.name}</h1>
+                                        </div>
+                                        </Link>
                                     ))}
                                 </nav>
                             </div>
                             <div className="flex flex-shrink-0 pb-5">
-                                <a href="#" className="w-full flex-shrink-0">
+                                <Link href="#" className="w-full flex-shrink-0">
                                     <img className="mx-auto block h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
                                     <div className="sr-only">
                                         <p>{user.name}</p>
                                         <p>Account settings</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -195,8 +193,8 @@ const Mainpage = () => {
                             <div>
                                 <img
                                     className="h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/mark.svg?color=white"
-                                    alt="Your Company"
+                                    src={Logo}
+                                    alt="Yopali"
                                 />
                             </div>
                             <div>
@@ -211,37 +209,35 @@ const Mainpage = () => {
                             </div>
                         </div>
                     </div>
+             
 
-                    <main className="flex flex-1 overflow-hidden">
-                        {/* Primary column */}
-                        <section
-                            aria-labelledby="primary-heading"
-                            className="flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last"
-                        >
-                            <h1 className='font-bold text-3xl text-center py-3'>Popular Politicians</h1>
+                <main className="flex flex-1 overflow-hidden">
+                    {/* Primary column  */}
+                    <section
+                        aria-labelledby="primary-heading"
+                        className="flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last"
+                    >
+                        
 
-                            <Politicianlistformain />
-                            {/* Your content */}
-                            <h1 className='text-3xl font-bold text-center'>Trends</h1>
-                            <hr></hr>
-                            <Trends />
-                        </section>
+                        {children}
+                        {/* Your content  */}
+                       
+                        
+                    </section>
 
-                        {/* LAST column (hidden on smaller screens) */}
-                        <aside className="hidden lg:order-last lg:block lg:flex-shrink-0">
-                            <div className="relative flex h-full w-44 flex-col overflow-y-auto border-r border-gray-200 bg-[#408BB6]">
-                                {/* Your content */}
-                                <div className='flex flex-col w-auto'>
-                                    <div className='h-auto w-full  space-y-6 mt-5'>
-
-
-                                    </div>
+                    {/* LAST column (hidden on smaller screens)  */}
+                    <aside className="hidden lg:order-last lg:block lg:flex-shrink-0">
+                        <div className="relative flex h-full w-44 flex-col overflow-y-auto border-r border-gray-200 bg-[#408BB6]">
+                            {/* Your content  */}
+                            <div className='flex flex-col w-auto'>
+                                <div className='h-auto w-full  space-y-6 mt-5'>
                                 </div>
                             </div>
-                        </aside>
-                    </main>
-                </div>
+                        </div>
+                    </aside>
+                </main>
             </div>
+        </div>
         </>
     )
 }

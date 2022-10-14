@@ -1,35 +1,30 @@
 import React from 'react'
 const people = [
     {
-      name: 'Whitney Francis',
-      role: 'Copywriter',
-      imageUrl:
-        'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    },
+      name: '#SherBahadur',
+  
+      imageUrl:'../../Assets/sherbahadur.jpg'    },
     {
-        name: 'Whitney Francis',
-        role: 'Copywriter',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      },
+        name: '#gaganthapa',
+      
+        imageUrl:'../../Assets/gagan-thapa.jpg'       },
       {
-        name: 'Whitney Francis',
-        role: 'Copywriter',
+        name: '#rabi',
+       
         imageUrl:
-          'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      },
+        '../../Assets/rabi.jpg'       },
       {
-        name: 'Whitney Francis',
-        role: 'Copywriter',
-        imageUrl:
-          'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      },
+        name: '#sagardhakal',
+       
+        imageUrl:'../../Assets/sagardhakal.jpg'      },
     // More people...
   ]
 
 const Trends = () => {
   return (
     <div className="bg-white">
+      <h1 className='text-3xl font-bold text-center mt-8'>Trends</h1>
+        <hr></hr>
     <div className="max-w-7xl mx-auto py-6 px-4 text-center sm:px-4 lg:px-8 lg:py-6">
       <div className="space-y-7">
         <ul

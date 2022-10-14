@@ -1,14 +1,26 @@
+import {BrowserRouter as  Router,Routes,Route} from "react-router-dom"
 import Login from './Components/Login';
-import Politicianlistformain from './Components/Politicianlistformain';
-import Mainpage from './Layout/Mainpage';
+import Politicianlistformain from "./Components/MainpageComp/Politicianlistformain";
+import Registration from './Components/Registration';
+import Detailedpage from "./Pages/Detailedpage";
+import Mainpage from './Pages/Mainpage';
+
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-      {/* <Mainpage /> */}
-      {/* <Politicianlistformain /> */}
-    </div>
+    <>
+    <Router>
+       <Mainpage>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Registration />} />
+          <Route path='/mainpage' element={<Politicianlistformain /> } />
+          <Route path="/detailedpage" element={<Detailedpage/>} />
+          <Route path="/detailedpage" element={<Detailedpage/>} />
+        </Routes>
+     </Mainpage> 
+    </Router>
+    </>
   );
 }
 
