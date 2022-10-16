@@ -4,33 +4,41 @@ import { useNavigate } from "react-router-dom";
 import Trends from './Trends';
 const files = [
   {
+    
     title: 'Sher Bahadur Deuba',
     role: 'Prime minister',
-    source:'../../Assets/sherbahadur.jpg'  },
+    source:'../../Assets/sherbahadur.jpg' 
+   },
   {
     title: 'KP Oli',
     role: 'Former Prime minister',
-    source:'../../Assets/KP_Oli.png'  },
+    source:'../../Assets/KP_Oli.png' 
+   },
   {
     title: 'Prachanda Dahal',
     role: 'Nepali Moist',
-    source:'../../Assets/Prachanda.jpg'  },
+    source:'../../Assets/Prachanda.jpg' 
+   },
   {
     title: 'Rabi Lamichhane',
     role: 'Nepal Independent Party',
-    source:'../../Assets/rabi.jpg'  },
+    source:'../../Assets/rabi.jpg' 
+   },
   {
     title: 'Sagar Dhakal',
     role: 'Independent',
-    source:'../../Assets/sagardhakal.jpg'  },
+    source:'../../Assets/sagardhakal.jpg'  
+  },
   {
     title: 'Gagan Thapa',
     role: 'Nepali Congress',
-    source:'../../Assets/gagan-thapa.jpg'  },
+    source:'../../Assets/gagan-thapa.jpg' 
+   },
   {
     title: 'Bishnu Prasad Paudel',
     role: 'UML',
-    source:'../../Assets/bishnuprasad.jpg'  },
+    source:'../../Assets/bishnuprasad.jpg'  
+  },
   {
     title: 'Balkrishna Khand',
     role: 'Home minister',

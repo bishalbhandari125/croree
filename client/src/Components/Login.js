@@ -51,6 +51,7 @@ const onSubmit = (e) => {
                   <div className="mt-1">
                     <input
                       id="password"
+                      type="password"
                       name="password"
                       value={password}
                       onChange={onChange}

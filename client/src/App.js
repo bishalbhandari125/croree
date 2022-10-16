@@ -4,6 +4,7 @@ import Politicianlistformain from "./Components/MainpageComp/Politicianlistforma
 import Registration from './Components/Registration';
 import Detailedpage from "./Pages/Detailedpage";
 import Mainpage from './Pages/Mainpage';
+import Compareslideup from "./Components/Compareslideup";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path='/register' element={<Registration />} />
           <Route path='/mainpage' element={<Politicianlistformain /> } />
           <Route path="/detailedpage" element={<Detailedpage/>} />
-          <Route path="/detailedpage" element={<Detailedpage/>} />
+          <Route path="/compareslideup" element={<Compareslideup/>} />
         </Routes>
      </Mainpage> 
     </Router>

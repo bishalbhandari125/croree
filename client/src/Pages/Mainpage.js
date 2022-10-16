@@ -1,7 +1,5 @@
 import React from 'react'
-import Politicianlistformain from '../Components/MainpageComp/Politicianlistformain'
-import Trends from '../Components/MainpageComp/Trends'
-import Sidebar from '../Components/Sidebar'
+import Filter from '../Components/Filter'
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Logo from '../Assets/logo.png'
@@ -229,9 +227,10 @@ const Mainpage = ({ children }) => {
                     <aside className="hidden lg:order-last lg:block lg:flex-shrink-0">
                         <div className="relative flex h-full w-44 flex-col overflow-y-auto border-r border-gray-200 bg-[#408BB6]">
                             {/* Your content  */}
-                            <div className='flex flex-col w-auto'>
-                                <div className='h-auto w-full  space-y-6 mt-5'>
-                                </div>
+                            <div className='flex flex-col w-auto items-center content-center'>
+                                
+                                    <Filter />
+                            
                             </div>
                         </div>
                     </aside>
